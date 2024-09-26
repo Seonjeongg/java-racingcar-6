@@ -11,6 +11,7 @@ public class CarService {
     GameService gameService = new GameService();
     public void perform_racing(Game game){
         int count=game.getCount();
+        OutputView.execution_result_message();
         for(int i=0;i<count;i++){
             getRandomValues(game.getCars());
         }
