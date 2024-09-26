@@ -9,8 +9,8 @@ public class CarService {
     public void getRandomValues(ArrayList<Car> cars) {
         for(int i=0;i<cars.size();i++){
             int n=generateRandomValue();
-            if(n>=4) moveCar();
-            else stopCar();
+            if(n>=4) moveCar(cars.get(i));
+            else stopCar(cars.get(i));
         }
     }
 
@@ -18,9 +18,10 @@ public class CarService {
         return Randoms.pickNumberInRange(0,9);
     }
 
-    private void moveCar(){
-
+    private void moveCar(Car car){
+        String position=car.getPosition();
+        car.setPosition(position);
     }
 
-    private void stopCar(){}
+    private void stopCar(Car car){}
 }

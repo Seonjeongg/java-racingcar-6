@@ -34,7 +34,4 @@ public class GameService {
         if(carname.length()>5) return true;
         return false;
     }
-
-//    public Game creategameFromString(String)
-
 }
