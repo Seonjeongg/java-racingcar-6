@@ -8,12 +8,13 @@ import racingcar.View.OutputView;
 import java.util.ArrayList;
 
 public class CarService {
+    GameService gameService = new GameService();
     public void perform_racing(Game game){
         int count=game.getCount();
         for(int i=0;i<count;i++){
             getRandomValues(game.getCars());
         }
-
+        gameService.print_winner(game);
     }
     public void getRandomValues(ArrayList<Car> cars) {
         for(int i=0;i<cars.size();i++){

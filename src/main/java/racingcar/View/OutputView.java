@@ -13,7 +13,7 @@ public class OutputView {
         System.out.println(execution_result);
     }
     public static void final_winner_message(){
-        System.out.println(final_winner);
+        System.out.print(final_winner+" "+OUTPUT_Signal);
     }
     public static void Car_racing_situation(ArrayList<Car> cars){
         for(Car car : cars){
@@ -22,5 +22,9 @@ public class OutputView {
             System.out.println(car.getPosition());
         }
         System.out.println();
+    }
+    public static void print_winner(ArrayList<String> winners){
+        String result=String.join(", ", winners);
+        System.out.println(result);
     }
 }

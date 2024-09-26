@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class GameController {
     GameService gameService=new GameService();
     CarService carService=new CarService();
+
     public void run(){
         Game game=gameService.gamestart(inputStringCars(),inputStringcount());
         carService.perform_racing(game);

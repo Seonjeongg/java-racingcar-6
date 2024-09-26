@@ -2,6 +2,7 @@ package racingcar.Service;
 
 import racingcar.Model.Car;
 import racingcar.Model.Game;
+import racingcar.View.OutputView;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,28 @@ public class GameService {
             }
         }
         return carList;
+    }
+
+    public void print_winner(Game game){
+        OutputView.final_winner_message();
+        OutputView.print_winner(calculate_winner(game));
+    }
+
+    private ArrayList<String> calculate_winner(Game game) {
+        ArrayList<String> winners = new ArrayList<>();
+        ArrayList<Car> carList = game.getCars();
+        int MAXlength=0;
+        for(Car car:carList){
+            int carlength=car.getPosition().length();
+            if(carlength>MAXlength){
+                MAXlength=carlength;
+                winners.clear();
+            }
+            if(carlength>=MAXlength) {
+                winners.add(car.getCarName());
+            }
+        }
+        return winners;
     }
 
     private boolean checkexception(String[] car){
